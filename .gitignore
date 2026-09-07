@@ -232,3 +232,10 @@ docs/_build/
 local/
 dev/
 test-data/
+
+# Android standalone project outputs
+android/.gradle/
+android/build/
+android/app/build/
+android/.cxx/
+android/app/.cxx/

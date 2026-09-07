@@ -50,6 +50,30 @@ Sudoku is a puzzle app that lets you solve classic number-placement challenges. 
 ### Build from source
 You can clone and run from GNOME Builder.
 
+### Android (experimental, repo-local)
+
+Android build/install helpers live in this repository under `scripts/android`.
+
+Prerequisites:
+
+- Android SDK + NDK installed
+- `adb`, `meson`, `ninja`, `pkg-config`, `glib-compile-schemas`
+- Baseline/overlay runtime directories available (default: `.a0-baseline`)
+
+Quickstart:
+
+```bash
+scripts/android/setup-runtime.sh
+scripts/android/install-python-runtime.sh beeware-3.9
+scripts/android/build-apk.sh
+scripts/android/install-apk.sh
+scripts/android/launch.sh
+```
+
+Default APK output:
+
+- `android/app/build/outputs/apk/debug/app-debug.apk`
+
 
 ## Contribute
 We need your help to make Sudoku better!
