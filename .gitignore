@@ -178,6 +178,9 @@ icon-theme.cache
 *.c
 *.h
 *.vapi
+# Hand-written JNI sources are not Vala-generated
+!android/app/src/main/jni/*.c
+!android/app/src/main/jni/*.h
 
 # GObject Introspection
 *.gir
