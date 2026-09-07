@@ -9,10 +9,9 @@ import android.system.Os
 import android.util.Log
 import android.view.MotionEvent
 import android.view.ViewGroup
-import org.gtk.android.ToplevelActivity
 import java.io.File
 
-class SudokuActivity : ToplevelActivity() {
+class SudokuActivity : Activity() {
 
     companion object {
         private const val TAG = "SudokuActivity"
@@ -41,7 +40,7 @@ class SudokuActivity : ToplevelActivity() {
 
             System.loadLibrary("sudoku_bootstrap")
             nativeLibsLoaded = true
-            Log.i(TAG, "sudoku_bootstrap library loaded")
+            Log.i(TAG, "sudoku_bootstrap loaded")
         }
     }
 
