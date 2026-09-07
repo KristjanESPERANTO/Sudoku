@@ -24,6 +24,21 @@ if [[ -z "$ADB_BIN" || ! -x "$ADB_BIN" ]]; then
 fi
 
 if [[ -n "$DEVICE" ]]; then
+  if ! "$ADB_BIN" -s "$DEVICE" get-state >/dev/null 2>&1; then
+    echo "Android device '$DEVICE' is not reachable."
+    echo "Check ANDROID_SERIAL or run: $ADB_BIN devices -l"
+    exit 1
+  fi
+else
+  if ! "$ADB_BIN" get-state >/dev/null 2>&1; then
+    echo "No Android device/emulator connected."
+    echo "Start an emulator or connect a device, then re-run this script."
+    echo "Hint: $ADB_BIN devices -l"
+    exit 1
+  fi
+fi
+
+if [[ -n "$DEVICE" ]]; then
   "$ADB_BIN" -s "$DEVICE" shell am start -W -n "$ACT"
 else
   "$ADB_BIN" shell am start -W -n "$ACT"
