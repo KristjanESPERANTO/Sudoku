@@ -1,0 +1,11 @@
+if(NOT DEFINED A0_BASELINE_ROOT)
+    set(A0_BASELINE_ROOT "${A0_REPO_ROOT}/.a0-baseline")
+endif()
+
+if(NOT DEFINED A0_BASELINE_PREFIX)
+    set(A0_BASELINE_PREFIX "${A0_BASELINE_ROOT}/install")
+endif()
+
+if(NOT DEFINED A0_C1_OVERLAY_PREFIX)
+    set(A0_C1_OVERLAY_PREFIX "${A0_BASELINE_ROOT}/install-c1-overlay")
+endif()

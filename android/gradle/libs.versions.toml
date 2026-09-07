@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: CC0-1.0
+
+[versions]
+# ── Android Toolchain ─────────────────────────────────────────────────────────
+# All versions pinned to the PoC matrix from CONCEPT.md § 9a.
+# Do NOT upgrade without updating the matrix and re-running the dependency baseline.
+
+agp                 = "9.1.0"          # Android Gradle Plugin — stable, March 2026
+kotlin              = "2.1.0"          # stable Kotlin version compatible with AGP 9.1
+gradle-wrapper      = "9.3.1"          # see gradle/wrapper/gradle-wrapper.properties
+
+# SDK / NDK — single source of truth.
+# Referenced in app/build.gradle.kts via libs.versions.compileSdk.get() etc.
+compileSdk          = "36"             # Android 16
+targetSdk           = "36"
+minSdk              = "31"             # Android 12 — no legacy support below this
+ndkVersion          = "29.0.14206865"  # NDK r29 stable, April 2026
+buildTools          = "36.0.0"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
