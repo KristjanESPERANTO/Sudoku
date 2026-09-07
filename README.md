@@ -74,6 +74,11 @@ Default APK output:
 
 - `android/app/build/outputs/apk/debug/app-debug.apk`
 
+Android licensing note:
+
+- Imported `org.gtk.android` bridge files in `android/app/src/main/java/org/gtk/android` are under `LGPL-2.1-or-later`.
+- The corresponding license text is included as `COPYING.LESSER`.
+
 
 ## Contribute
 We need your help to make Sudoku better!
